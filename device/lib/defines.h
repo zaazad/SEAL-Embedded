@@ -327,12 +327,12 @@ FFT type. For now, we only support "on-the-fly" for the FFT type.
 #define __has_builtin(x) 0  // Compatibility with non-clang compilers.
 #endif
 
-#if __has_builtin(__builtin_complex)
-#define _complex(x, y) __builtin_complex(x, y)
-#else
+//#if __has_builtin(__builtin_complex)
+//#define _complex(x, y) __builtin_complex(x, y)
+//#else
 // #define _complex(x, y) CMPLX(x, y)
 #define _complex(x, y) x + y *I
-#endif
+//#endif
 
 #ifdef SE_USE_PREDEF_COMPLEX_FUNCS
     #define se_conj(x) conj(x)
