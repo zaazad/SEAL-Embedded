@@ -52,10 +52,10 @@ void test_ckks_sym_base(bool test_message)
     if (!parms.sample_s) se_assert(parms.small_s);
 
 #ifdef SE_USE_MALLOC
-    print_ckks_mempool_size(n, 1);
+    #print_ckks_mempool_size(n, 1);
     ZZ *mempool = ckks_mempool_setup_sym(n);
 #else
-    print_ckks_mempool_size();
+    //print_ckks_mempool_size();
     ZZ mempool_local[MEMPOOL_SIZE];
     ZZ *mempool = &(mempool_local[0]);
 #endif
@@ -104,7 +104,7 @@ void test_ckks_sym_base(bool test_message)
     // -- Set up parameters and index_map if applicable
     ckks_setup(n, nprimes, index_map, &parms);
 
-    print_test_banner("Symmetric Encryption", &parms);
+    //print_test_banner("Symmetric Encryption", &parms);
 
     // -- If s is allocated space ahead of time, can load ahead of time too
     // -- If we are testing and sample s is set, this will also sample s
@@ -112,16 +112,16 @@ void test_ckks_sym_base(bool test_message)
     size_t s_size = parms.small_s ? n / 16 : n;
     if (encode_only) clear(s, s_size);
 
-    for (size_t testnum = 0; testnum < 9; testnum++)
+    for (size_t testnum = 0; testnum < 1; testnum++)
     {
-        printf("-------------------- Test %zu -----------------------\n", testnum);
+  //printf("-------------------- Test %zu -----------------------\n", testnum);
         ckks_reset_primes(&parms);
 
         // -- Set test values
         if (test_message)
         {
             set_encode_encrypt_test(testnum, vlen, v);
-            print_poly_flpt("v        ", v, vlen);
+            //print_poly_flpt("v        ", v, vlen);
         }
 
         // -- Begin encode-encrypt sequence
@@ -144,7 +144,7 @@ void test_ckks_sym_base(bool test_message)
 
         for (size_t i = 0; i < parms.nprimes; i++)
         {
-            print_zz("\n ***** Modulus", parms.curr_modulus->value);
+  //print_zz("\n ***** Modulus", parms.curr_modulus->value);
 
             // -- Per prime Encode + Encrypt
             ckks_encode_encrypt_sym(&parms, conj_vals_int, NULL, &shareable_prng, s, ntt_pte,
@@ -185,7 +185,7 @@ Full encode + symmetric encrypt test
 */
 void test_ckks_encode_encrypt_sym(void)
 {
-    printf("Beginning tests for ckks encode + symmetric encrypt...\n");
+  //printf("Beginning tests for ckks encode + symmetric encrypt...\n");
     bool test_message = 1;
     test_ckks_sym_base(test_message);
 }

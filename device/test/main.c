@@ -101,7 +101,7 @@ int main(void)
     //    because it uses schoolbook multiplication
     // test_poly_mult_ntt();
 
-    test_fft();
+    //test_fft();
 
     // test_enc_zero_sym();
     // test_enc_zero_asym();
