@@ -190,7 +190,7 @@ void check_decode_decrypt_inpl(ZZ *c0, ZZ *c1, const flpt *values, size_t values
     print_poly("c0", c0, n);
     print_poly("c1", c1, n);
     print_poly("s", s, n);
-
+    
     // -- Calculate: c0 := [c0 + c1*s]
     ckks_decrypt_inpl(c0, c1, s, small_s, parms);
 
@@ -205,8 +205,8 @@ void check_decode_decrypt_inpl(ZZ *c0, ZZ *c1, const flpt *values, size_t values
     //print_poly_full("     c0    ", c0, n);
     intt(parms, temp, c0);
     intt(parms, temp, pterr);
-    const char *s1 = "pte calculated"; print_poly(s1, pte, n);
-    const char *s2 = "pte decrypted "; print_poly(s2, c0, n);
+    const char *s1 = "pte calculated"; //print_poly(s1, pte, n);
+    const char *s2 = "pte decrypted "; //print_poly(s2, c0, n);
     */
 
     compare_poly(s1, pte_calc, s2, c0, n);

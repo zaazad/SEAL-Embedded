@@ -279,6 +279,7 @@ void se_print_relative_positions(const ZZ *st, const SE_PTRS *se_ptrs)
 #endif
     size_t n = SE_DEGREE_N;
 #endif
+    /*
     printf("\n\tPrinting relative positions (negative value == does not exist)...\n");
     printf("\t    conj_vals: %0.4f\n", ((ZZ *)se_ptrs->conj_vals - st) / (double)n);
     printf("\tconj_vals_int: %0.4f\n", ((ZZ *)se_ptrs->conj_vals_int_ptr - st) / (double)n);
@@ -291,7 +292,7 @@ void se_print_relative_positions(const ZZ *st, const SE_PTRS *se_ptrs)
     if (!sym) { printf("\t           e1: %0.4f\n", ((ZZ *)se_ptrs->e1_ptr - st) / (double)n); }
     printf("\t      ternary: %0.4f\n", ((ZZ *)se_ptrs->ternary - st) / (double)n);
     printf("\t       values: %0.4f\n", ((ZZ *)se_ptrs->values - st) / (double)n);
-    printf("\n");
+    printf("\n");*/
 }
 
 #ifdef SE_USE_MALLOC
@@ -308,7 +309,7 @@ void se_print_addresses(const ZZ *mempool, const SE_PTRS *se_ptrs)
     bool sym = 0;
 #endif
 #endif
-    printf("\n\tPrinting addresses (nil == does not exist)...\n");
+    /* printf("\n\tPrinting addresses (nil == does not exist)...\n");
     printf("mempool begin address: %p\n", mempool);
     printf("mempool end   address: %p\n", &(mempool[mempool_size - 1]));
     printf("\t    conj_vals: %p\n", se_ptrs->conj_vals);
@@ -322,7 +323,7 @@ void se_print_addresses(const ZZ *mempool, const SE_PTRS *se_ptrs)
     if (!sym) printf("\t           e1: %p\n", se_ptrs->e1_ptr);
     printf("\t      ternary: %p\n", se_ptrs->ternary);
     printf("\t       values: %p\n", se_ptrs->values);
-    printf("\n");
+    printf("\n");*/
 }
 
 #ifdef SE_USE_MALLOC

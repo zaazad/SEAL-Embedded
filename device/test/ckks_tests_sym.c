@@ -52,7 +52,7 @@ void test_ckks_sym_base(bool test_message)
     if (!parms.sample_s) se_assert(parms.small_s);
 
 #ifdef SE_USE_MALLOC
-    #print_ckks_mempool_size(n, 1);
+    //print_ckks_mempool_size(n, 1);
     ZZ *mempool = ckks_mempool_setup_sym(n);
 #else
     //print_ckks_mempool_size();
@@ -159,8 +159,8 @@ void test_ckks_sym_base(bool test_message)
             // -- Note: sizeof(max(ntt_roots, ifft_roots)) must be passed as temp memory
             //    to undo ifft
             bool s_test_save_small = false;
-            check_decode_decrypt_inpl(c0, c1_test_save, v, vlen, s_test_save, s_test_save_small,
-                                      ntt_pte, index_map, &parms, temp_test_mem);
+            //check_decode_decrypt_inpl(c0, c1_test_save, v, vlen, s_test_save, s_test_save_small,
+            //                        ntt_pte, index_map, &parms, temp_test_mem);
 
             // -- Done checking this prime. Now try next prime if requested
             bool ret = ckks_next_prime_sym(&parms, s);

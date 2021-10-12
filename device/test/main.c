@@ -80,8 +80,8 @@ int main(void)
     // {
     //     printf("Beginning tests...\n");
     // }
-    printf("Beginning tests...\n");
-    se_randomness_init();  // required for nrf. does nothing if not on nrf
+    //printf("Beginning tests...\n");
+    //se_randomness_init();  // required for nrf. does nothing if not on nrf
 
     // test_sample_poly_uniform();
     // test_sample_poly_ternary();

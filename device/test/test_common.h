@@ -146,14 +146,14 @@ static inline void compare_poly(const char *a_name, const ZZ *a, const char *b_n
 static inline bool compare_poly_flpt(const char *a_name, const flpt *a, const char *b_name,
                                      const flpt *b, size_t len, flpt max_diff)
 {
-    printf("Comparing...\n");
+  //printf("Comparing...\n");
     for (size_t i = 0; i < len; i++)
     {
         flpt diff = (flpt)fabs(a[i] - b[i]);
         if (diff >= max_diff)
         {
-            printf("%s[%zu]: %0.9f\n", a_name, i, a[i]);
-            printf("%s[%zu]: %0.9f\n", b_name, i, b[i]);
+          //printf("%s[%zu]: %0.9f\n", a_name, i, a[i]);
+          //printf("%s[%zu]: %0.9f\n", b_name, i, b[i]);
             return 1;
         }
     }
