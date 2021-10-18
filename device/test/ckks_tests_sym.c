@@ -112,7 +112,7 @@ void test_ckks_sym_base(bool test_message)
     size_t s_size = parms.small_s ? n / 16 : n;
     if (encode_only) clear(s, s_size);
 
-    for (size_t testnum = 0; testnum < 3; testnum++)
+    for (size_t testnum = 0; testnum < 1; testnum++)
     {
   //printf("-------------------- Test %zu -----------------------\n", testnum);
         ckks_reset_primes(&parms);
